@@ -1,0 +1,173 @@
+[8773430] Using port 4461
+Server waiting for client
+Connected player with UUID Blue-Perpentine
+Assigned index 1
+Server waiting for client
+Connected player with UUID Green-Perpentine
+Assigned index 2
+Server waiting for client
+Connected player with UUID Purple-Perpentine
+Assigned index 3
+Server waiting for client
+Connected player with UUID Red
+Assigned index 0
+[8777922] Processing the map...
+[8778015] Initializing controllers...
+[8778019] Initializing the game...
+[0] Red (Comm open) - sending GET_READY...
+[0] Red (Comm open) - Ready!
+[1] Blue-Perpentine (Comm open) - sending GET_READY...
+[1] Blue-Perpentine (Comm open) - Ready!
+[2] Green-Perpentine (Comm open) - sending GET_READY...
+[2] Green-Perpentine (Comm open) - Ready!
+[3] Purple-Perpentine (Comm open) - sending GET_READY...
+[3] Purple-Perpentine (Comm open) - Ready!
+[8778578] Turn number: 0
+[8778579] ----------------------------------------------------
+[8779268] Turn number: 1
+[8779268] ----------------------------------------------------
+[8779945] Turn number: 2
+[8779945] ----------------------------------------------------
+[8780635] Turn number: 3
+[8780635] ----------------------------------------------------
+[8781307] Turn number: 4
+[8781307] ----------------------------------------------------
+[8781976] Turn number: 5
+[8781976] ----------------------------------------------------
+[8782579] Red Acquired Territory, now at  (4, 2)
+[8782579] Blue-Perpentine Acquired Territory, now at  (27, 4)
+[8782580] Green-Perpentine Acquired Territory, now at  (27, 25)
+[8782580] Purple-Perpentine Acquired Territory, now at  (4, 25)
+[8782657] Turn number: 6
+[8782657] ----------------------------------------------------
+[8783326] Turn number: 7
+[8783326] ----------------------------------------------------
+[8783993] Turn number: 8
+[8783993] ----------------------------------------------------
+[8784661] Turn number: 9
+[8784661] ----------------------------------------------------
+[8785331] Turn number: 10
+[8785331] ----------------------------------------------------
+[8785996] Turn number: 11
+[8785996] ----------------------------------------------------
+[8786598] Blue-Perpentine Acquired Territory, now at  (25, 4)
+[8786666] Turn number: 12
+[8786666] ----------------------------------------------------
+[8787268] Red Acquired Territory, now at  (6, 3)
+[8787268] Green-Perpentine Acquired Territory, now at  (26, 23)
+[8787268] Purple-Perpentine Acquired Territory, now at  (3, 23)
+[8787329] Turn number: 13
+[8787329] ----------------------------------------------------
+[8787991] Turn number: 14
+[8787991] ----------------------------------------------------
+[8788658] Turn number: 15
+[8788658] ----------------------------------------------------
+[8789349] Turn number: 16
+[8789349] ----------------------------------------------------
+[8790015] Turn number: 17
+[8790015] ----------------------------------------------------
+[8790617] Blue-Perpentine Acquired Territory, now at  (25, 2)
+[8790682] Turn number: 18
+[8790682] ----------------------------------------------------
+[8791348] Turn number: 19
+[8791348] ----------------------------------------------------
+[8791950] Red Acquired Territory, now at  (6, 2)
+[8791950] Green-Perpentine Acquired Territory, now at  (27, 23)
+[8791950] Purple-Perpentine Acquired Territory, now at  (4, 23)
+[8792013] Turn number: 20
+[8792013] ----------------------------------------------------
+[8792677] Turn number: 21
+[8792677] ----------------------------------------------------
+[8793340] Turn number: 22
+[8793341] ----------------------------------------------------
+[8794019] Turn number: 23
+[8794019] ----------------------------------------------------
+[8794687] Turn number: 24
+[8794687] ----------------------------------------------------
+[8795289] Blue-Perpentine Acquired Territory, now at  (26, 6)
+[8795357] Turn number: 25
+[8795358] ----------------------------------------------------
+[8796023] Turn number: 26
+[8796023] ----------------------------------------------------
+[8796625] Purple-Perpentine Acquired Territory, now at  (4, 22)
+[8796695] Turn number: 27
+[8796696] ----------------------------------------------------
+[8797297] Red Acquired Territory, now at  (8, 2)
+[8797297] Green-Perpentine Acquired Territory, now at  (27, 21)
+[8797372] Turn number: 28
+[8797372] ----------------------------------------------------
+[8798039] Turn number: 29
+[8798039] ----------------------------------------------------
+[8798708] Turn number: 30
+[8798708] ----------------------------------------------------
+[8799374] Turn number: 31
+[8799374] ----------------------------------------------------
+[8799976] Blue-Perpentine Acquired Territory, now at  (24, 5)
+[8800042] Turn number: 32
+[8800043] ----------------------------------------------------
+[8800715] Turn number: 33
+[8800715] ----------------------------------------------------
+[8801316] Red Acquired Territory, now at  (9, 3)
+[8801316] Green-Perpentine Acquired Territory, now at  (26, 20)
+[8801386] Turn number: 34
+[8801387] ----------------------------------------------------
+[8802057] Turn number: 35
+[8802058] ----------------------------------------------------
+[8802659] Purple-Perpentine Acquired Territory, now at  (4, 21)
+[8802726] Turn number: 36
+[8802727] ----------------------------------------------------
+[8803328] Blue-Perpentine Acquired Territory, now at  (23, 3)
+[8803443] Turn number: 37
+[8803443] ----------------------------------------------------
+[8804083] Turn number: 38
+[8804083] ----------------------------------------------------
+[8804747] Turn number: 39
+[8804748] ----------------------------------------------------
+[8805419] Turn number: 40
+[8805420] ----------------------------------------------------
+[8806079] Turn number: 41
+[8806079] ----------------------------------------------------
+[8806681] Red Acquired Territory, now at  (10, 2)
+[8806681] Blue-Perpentine Acquired Territory, now at  (23, 2)
+[8806681] Green-Perpentine Acquired Territory, now at  (27, 19)
+[8806682] Purple-Perpentine Acquired Territory, now at  (4, 19)
+[8806745] Turn number: 42
+[8806745] ----------------------------------------------------
+[8807411] Turn number: 43
+[8807411] ----------------------------------------------------
+[8808071] Turn number: 44
+[8808071] ----------------------------------------------------
+[8808736] Turn number: 45
+[8808736] ----------------------------------------------------
+[8809392] Turn number: 46
+[8809392] ----------------------------------------------------
+[8810054] Turn number: 47
+[8810054] ----------------------------------------------------
+[8810656] Blue-Perpentine Acquired Territory, now at  (22, 1)
+[8810726] Turn number: 48
+[8810726] ----------------------------------------------------
+[8811328] Red Acquired Territory, now at  (12, 3)
+[8811328] Green-Perpentine Acquired Territory, now at  (26, 17)
+[8811329] Purple-Perpentine Acquired Territory, now at  (5, 19)
+[8811388] Turn number: 49
+[8811388] ----------------------------------------------------
+[8812058] Turn number: 50
+[8812058] ----------------------------------------------------
+[8812731] Turn number: 51
+[8812732] ----------------------------------------------------
+[8813407] Turn number: 52
+[8813407] ----------------------------------------------------
+[8814074] Turn number: 53
+[8814074] ----------------------------------------------------
+[8814743] Turn number: 54
+[8814743] ----------------------------------------------------
+[8815345] Blue-Perpentine Acquired Territory, now at  (22, 4)
+[8815405] Turn number: 55
+[8815405] ----------------------------------------------------
+[8816007] Red Acquired Territory, now at  (12, 2)
+[8816007] Green-Perpentine Acquired Territory, now at  (27, 17)
+[8816007] Purple-Perpentine Acquired Territory, now at  (5, 18)
+[8816076] Turn number: 56
+[8816076] ----------------------------------------------------
+[8816732] Turn number: 57
+[8816732] ----------------------------------------------------
