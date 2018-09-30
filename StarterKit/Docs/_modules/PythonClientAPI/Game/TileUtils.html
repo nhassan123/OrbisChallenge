@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PythonClientAPI.game.TileUtils &mdash; Orbis Challenge 2018 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom-styles.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Orbis Challenge 2018
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installing.html">Installing Java/Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ide.html">Configuring Your IDE</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../game.html">Game Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../challenge.html">Scoring and Tournament</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../javaapi.html">Java API Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pythonapi.html">Python API Basics</a></li>
+<li class="toctree-l1"><a class="reference external" href="_static/javadoc/index.html#://">Java Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../PythonClientAPI.Game.html">Python Docs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Orbis Challenge 2018</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>PythonClientAPI.game.TileUtils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for PythonClientAPI.game.TileUtils</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">PythonClientAPI.structures.Collections</span> <span class="k">import</span> <span class="n">PriorityQueue</span><span class="p">,</span> <span class="n">Queue</span>
+<span class="kn">from</span> <span class="nn">PythonClientAPI.game.Enums</span> <span class="k">import</span> <span class="n">TileType</span><span class="p">,</span> <span class="n">Direction</span><span class="p">,</span> <span class="n">Team</span>
+<span class="kn">from</span> <span class="nn">PythonClientAPI.game.PointUtils</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">PythonClientAPI.game.Entities</span> <span class="k">import</span> <span class="n">Tile</span>
+
+
+<div class="viewcode-block" id="TileUtils"><a class="viewcode-back" href="../../../PythonClientAPI.Game.html#PythonClientAPI.game.TileUtils.TileUtils">[docs]</a><span class="k">class</span> <span class="nc">TileUtils</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">world</span><span class="p">,</span> <span class="n">friendly_unit</span><span class="p">,</span> <span class="n">enemy_units_map</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">world</span> <span class="o">=</span> <span class="n">world</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">friendly_unit</span> <span class="o">=</span> <span class="n">friendly_unit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">enemy_units_map</span> <span class="o">=</span> <span class="n">enemy_units_map</span>
+
+<div class="viewcode-block" id="TileUtils.get_closest_point_from"><a class="viewcode-back" href="../../../PythonClientAPI.Game.html#PythonClientAPI.game.TileUtils.TileUtils.get_closest_point_from">[docs]</a>    <span class="k">def</span> <span class="nf">get_closest_point_from</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">condition</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the closest point from a given point given a predicate.</span>
+
+<span class="sd">        :param source: point of interest.</span>
+<span class="sd">        :param condition: specified predicate.</span>
+<span class="sd">        :return: closest point from source that satisfies condition.</span>
+<span class="sd">        :rtype: tuple</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">queue</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+        <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+
+        <span class="k">while</span> <span class="ow">not</span> <span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()):</span>
+            <span class="n">cursor</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span>
+            <span class="n">neighbours</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">get_neighbours</span><span class="p">(</span><span class="n">cursor</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">direction</span> <span class="ow">in</span> <span class="n">Direction</span><span class="o">.</span><span class="n">ORDERED_DIRECTIONS</span><span class="p">:</span>
+                <span class="n">neighbour</span> <span class="o">=</span> <span class="n">neighbours</span><span class="p">[</span><span class="n">direction</span><span class="p">]</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="p">((</span><span class="n">neighbour</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">is_wall</span><span class="p">(</span><span class="n">neighbour</span><span class="p">)):</span>
+                    <span class="n">queue</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">neighbour</span><span class="p">)</span>
+                    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">neighbour</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">condition</span><span class="p">(</span><span class="n">cursor</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">cursor</span>
+
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="TileUtils.get_closest_neutral_territory_from"><a class="viewcode-back" href="../../../PythonClientAPI.Game.html#PythonClientAPI.game.TileUtils.TileUtils.get_closest_neutral_territory_from">[docs]</a>    <span class="k">def</span> <span class="nf">get_closest_neutral_territory_from</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">excluding_points</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the closest tile that isn&#39;t owned by any team from a given point.</span>
+
+<span class="sd">        :param point: point of interest</span>
+<span class="sd">        :param excluding_points: collection of points to exclude in search.</span>
+<span class="sd">        :return: closest neutral tile from point.</span>
+<span class="sd">        :rtype: Tile</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">is_within_bounds</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_closest_point_from</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">.</span><span class="n">is_neutral</span> <span class="ow">and</span> <span class="p">((</span><span class="ow">not</span> <span class="n">excluding_points</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excluding_points</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="TileUtils.get_closest_capturable_territory_from"><a class="viewcode-back" href="../../../PythonClientAPI.Game.html#PythonClientAPI.game.TileUtils.TileUtils.get_closest_capturable_territory_from">[docs]</a>    <span class="k">def</span> <span class="nf">get_closest_capturable_territory_from</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">excluding_points</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the closest tile that is capturable (neutral or enemy).</span>
+
+<span class="sd">        :param point: point of interest</span>
+<span class="sd">        :param excluding_points: collection of points to exclude in search.</span>
+<span class="sd">        :return: closest capturable tile from point.</span>
+<span class="sd">        :rtype: Tile</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">is_within_bounds</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_closest_point_from</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">.</span><span class="n">is_neutral</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">.</span><span class="n">is_enemy</span><span class="p">)</span> <span class="ow">and</span> <span class="p">((</span><span class="ow">not</span> <span class="n">excluding_points</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excluding_points</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="TileUtils.get_closest_friendly_territory_from"><a class="viewcode-back" href="../../../PythonClientAPI.Game.html#PythonClientAPI.game.TileUtils.TileUtils.get_closest_friendly_territory_from">[docs]</a>    <span class="k">def</span> <span class="nf">get_closest_friendly_territory_from</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">excluding_points</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the closest tile that is a part of friendly territory.</span>
+
+<span class="sd">        :param point: point of interest</span>
+<span class="sd">        :param excluding_points: collection of points to exclude in search.</span>
+<span class="sd">        :return: closest friendly tile from point.</span>
+<span class="sd">        :rtype: Tile</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">is_within_bounds</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_closest_point_from</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">.</span><span class="n">is_friendly</span> <span class="ow">and</span> <span class="p">((</span><span class="ow">not</span> <span class="n">excluding_points</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excluding_points</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="TileUtils.get_closest_enemy_territory_from"><a class="viewcode-back" href="../../../PythonClientAPI.Game.html#PythonClientAPI.game.TileUtils.TileUtils.get_closest_enemy_territory_from">[docs]</a>    <span class="k">def</span> <span class="nf">get_closest_enemy_territory_from</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">excluding_points</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the closest tile that is a part of enemy territory (any enemy team).</span>
+
+<span class="sd">        :param point: point of interest</span>
+<span class="sd">        :param excluding_points: collection of points to exclude in search.</span>
+<span class="sd">        :return: closest enemy tile from point.</span>
+<span class="sd">        :rtype: Tile</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">is_within_bounds</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_closest_point_from</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">.</span><span class="n">is_enemy</span> <span class="ow">and</span> <span class="p">((</span><span class="ow">not</span> <span class="n">excluding_points</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excluding_points</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="TileUtils.get_closest_territory_by_team"><a class="viewcode-back" href="../../../PythonClientAPI.Game.html#PythonClientAPI.game.TileUtils.TileUtils.get_closest_territory_by_team">[docs]</a>    <span class="k">def</span> <span class="nf">get_closest_territory_by_team</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">team</span><span class="p">,</span> <span class="n">excluding_points</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the closest tile that is a part of the given team&#39;s territory.</span>
+
+<span class="sd">        :param point: point of interest</span>
+<span class="sd">        :param team: team of interest</span>
+<span class="sd">        :param excluding_points: collection of points to exclude in search.</span>
+<span class="sd">        :return: closest tile from point that belongs to the team of interest.</span>
+<span class="sd">        :rtype: Tile</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">is_within_bounds</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_closest_point_from</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">.</span><span class="n">owner</span> <span class="o">==</span> <span class="n">team</span> <span class="ow">and</span> <span class="p">((</span><span class="ow">not</span> <span class="n">excluding_points</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excluding_points</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="TileUtils.get_closest_friendly_body_from"><a class="viewcode-back" href="../../../PythonClientAPI.Game.html#PythonClientAPI.game.TileUtils.TileUtils.get_closest_friendly_body_from">[docs]</a>    <span class="k">def</span> <span class="nf">get_closest_friendly_body_from</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">excluding_points</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the closest tile that has a friendly body on it.</span>
+
+<span class="sd">        :param point: point of interest</span>
+<span class="sd">        :param excluding_points: collection of points to exclude in search.</span>
+<span class="sd">        :return: closest tile from point that has a friendly body on it.</span>
+<span class="sd">        :rtype: Tile</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">is_within_bounds</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_closest_point_from</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">.</span><span class="n">body</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">friendly_unit</span><span class="o">.</span><span class="n">team</span> <span class="ow">and</span> <span class="p">((</span><span class="ow">not</span> <span class="n">excluding_points</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excluding_points</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="TileUtils.get_closest_enemy_body_from"><a class="viewcode-back" href="../../../PythonClientAPI.Game.html#PythonClientAPI.game.TileUtils.TileUtils.get_closest_enemy_body_from">[docs]</a>    <span class="k">def</span> <span class="nf">get_closest_enemy_body_from</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">excluding_points</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the closest tile that has an enemy body on it (any enemy team).</span>
+
+<span class="sd">        :param point: point of interest</span>
+<span class="sd">        :param excluding_points: collection of points to exclude in search.</span>
+<span class="sd">        :return: closest tile from point that has an enemy body on it.</span>
+<span class="sd">        :rtype: Tile</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">is_within_bounds</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_closest_point_from</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">.</span><span class="n">body</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">enemy_units_map</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">and</span> <span class="p">((</span><span class="ow">not</span> <span class="n">excluding_points</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excluding_points</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="TileUtils.get_closest_body_by_team"><a class="viewcode-back" href="../../../PythonClientAPI.Game.html#PythonClientAPI.game.TileUtils.TileUtils.get_closest_body_by_team">[docs]</a>    <span class="k">def</span> <span class="nf">get_closest_body_by_team</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">team</span><span class="p">,</span> <span class="n">excluding_points</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the closest tile that has a body of the given team.</span>
+
+<span class="sd">        :param point: point of interest</span>
+<span class="sd">        :param excluding_points: collection of points to exclude in search.</span>
+<span class="sd">        :return: closest tile from point that has a body of a given point on it.</span>
+<span class="sd">        :rtype: Tile</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">is_within_bounds</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_closest_point_from</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">.</span><span class="n">body</span> <span class="o">==</span> <span class="n">team</span> <span class="ow">and</span> <span class="p">((</span><span class="ow">not</span> <span class="n">excluding_points</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excluding_points</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="TileUtils.get_closest_enemy_head_from"><a class="viewcode-back" href="../../../PythonClientAPI.Game.html#PythonClientAPI.game.TileUtils.TileUtils.get_closest_enemy_head_from">[docs]</a>    <span class="k">def</span> <span class="nf">get_closest_enemy_head_from</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">excluding_points</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the closest tile that has an enemy head on it (any enemy team).</span>
+
+<span class="sd">        :param point: point of interest</span>
+<span class="sd">        :param excluding_points: collection of points to exclude in search.</span>
+<span class="sd">        :return: closest tile from point that has an enemy head on it.</span>
+<span class="sd">        :rtype: Tile</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">is_within_bounds</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_closest_point_from</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">.</span><span class="n">head</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">enemy_units_map</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">and</span> <span class="p">((</span><span class="ow">not</span> <span class="n">excluding_points</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excluding_points</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="TileUtils.get_closest_head_by_team"><a class="viewcode-back" href="../../../PythonClientAPI.Game.html#PythonClientAPI.game.TileUtils.TileUtils.get_closest_head_by_team">[docs]</a>    <span class="k">def</span> <span class="nf">get_closest_head_by_team</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">team</span><span class="p">,</span> <span class="n">excluding_points</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the closest tile that has a head of the given team.</span>
+
+<span class="sd">        :param point: point of interest</span>
+<span class="sd">        :param excluding_points: collection of points to exclude in search.</span>
+<span class="sd">        :return: closest tile from point that has the head of a given team on it.</span>
+<span class="sd">        :rtype: Tile</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">is_within_bounds</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_closest_point_from</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">.</span><span class="n">head</span> <span class="o">==</span> <span class="n">team</span> <span class="ow">and</span> <span class="p">((</span><span class="ow">not</span> <span class="n">excluding_points</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excluding_points</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="TileUtils.get_friendly_territory_edges"><a class="viewcode-back" href="../../../PythonClientAPI.Game.html#PythonClientAPI.game.TileUtils.TileUtils.get_friendly_territory_edges">[docs]</a>    <span class="k">def</span> <span class="nf">get_friendly_territory_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the edges of friendly territory.</span>
+
+<span class="sd">        :return: set of tiles at the edges of friendly territory.</span>
+<span class="sd">        :rtype: set</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">edges</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">friendly_unit</span><span class="o">.</span><span class="n">territory</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">adjacent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">get_neighbours</span><span class="p">(</span><span class="n">point</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                <span class="n">adjacent_tile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">adjacent</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">adjacent_tile</span><span class="o">.</span><span class="n">is_neutral</span> <span class="ow">or</span> <span class="n">adjacent_tile</span><span class="o">.</span><span class="n">is_enemy</span><span class="p">:</span>
+                    <span class="n">edges</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">point</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">edges</span></div>
+
+<div class="viewcode-block" id="TileUtils.get_friendly_territory_corners"><a class="viewcode-back" href="../../../PythonClientAPI.Game.html#PythonClientAPI.game.TileUtils.TileUtils.get_friendly_territory_corners">[docs]</a>    <span class="k">def</span> <span class="nf">get_friendly_territory_corners</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the corners of friendly territory.</span>
+
+<span class="sd">        :return: set of tiles at the corners of friendly territory.</span>
+<span class="sd">        :rtype: set</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">corners</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">edges</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_friendly_territory_edges</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
+            <span class="n">friendly_adjacent_tiles</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">adjacent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">get_neighbours</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">position</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                <span class="n">adjacent_tile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">position_to_tile_map</span><span class="p">[</span><span class="n">adjacent</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">adjacent_tile</span><span class="o">.</span><span class="n">is_friendly</span><span class="p">:</span>
+                    <span class="n">friendly_adjacent_tiles</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">adjacent_tile</span><span class="p">)</span>
+
+            <span class="n">distinct_x</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="n">distinct_y</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+            <span class="k">for</span> <span class="n">tile</span> <span class="ow">in</span> <span class="n">friendly_adjacent_tiles</span><span class="p">:</span>
+                <span class="n">distinct_x</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">position</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">distinct_y</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">position</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">distinct_x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">distinct_y</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">friendly_adjacent_tiles</span><span class="p">):</span>
+                <span class="n">corners</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">corners</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Orbis Investment Management Limited.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/video.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

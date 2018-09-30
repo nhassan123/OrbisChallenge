@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="PlayerAI as Green" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.orbischallenge.snake.client.RunClient" />
+    <module name="IntelliJ" />
+    <option name="PROGRAM_PARAMETERS" value="-c _lastconfig -u Green" />
+    <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    <method />
+  </configuration>
+</component>

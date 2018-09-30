@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Machine Learning Guide &mdash; Orbis Challenge 2018 1.0.0 documentation</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom-styles.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Python Docs" href="PythonClientAPI.Game.html" />
+
+
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+
+  <div class="wy-grid-for-nav">
+
+
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+
+
+
+            <a href="index.html" class="icon icon-home"> Orbis Challenge 2018
+
+
+
+          </a>
+
+
+
+
+              <div class="version">
+                1.0.0
+              </div>
+
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+
+
+
+
+
+
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installing Java/Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ide.html">Configuring Your IDE</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="game.html">Game Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="challenge.html">Scoring and Tournament</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">Java API Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythonapi.html">Python API Basics</a></li>
+<li class="toctree-l1"><a class="reference external" href="_static/javadoc/index.html#://">Java Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PythonClientAPI.Game.html">Python Docs</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Machine Learning Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#supervised-learning">1. Supervised Learning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#game-logs">Game Logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#supported-libraries">Supported Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#reinforcement-learning">2. Reinforcement Learning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rudimentary-strategy">Rudimentary Strategy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+
+      <nav class="wy-nav-top" aria-label="top navigation">
+
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Orbis Challenge 2018</a>
+
+      </nav>
+
+
+      <div class="wy-nav-content">
+
+        <div class="rst-content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+
+      <li><a href="index.html">Docs</a> &raquo;</li>
+
+      <li>Machine Learning Guide</li>
+
+
+      <li class="wy-breadcrumbs-aside">
+
+
+            <a href="_sources/ml.txt" rel="nofollow"> View page source</a>
+
+
+      </li>
+
+  </ul>
+
+
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+
+  <div class="section" id="machine-learning-guide">
+<h1>Machine Learning Guide<a class="headerlink" href="#machine-learning-guide" title="Permalink to this headline">¶</a></h1>
+<div class="core admonition">
+<p class="first admonition-title">Note about Machine Learning</p>
+<p class="last">We definitely encourage submissions of machine learning solutions! In our experience, we found that the game’s nature allows for reinforcement learning AIs, and supervised learning AIs to perform surprisingly well!</p>
+</div>
+<div class="section" id="supervised-learning">
+<h2>1. Supervised Learning<a class="headerlink" href="#supervised-learning" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="game-logs">
+<h3>Game Logs<a class="headerlink" href="#game-logs" title="Permalink to this headline">¶</a></h3>
+<p>Every game that is played produces logs in the aptly named Logs folder.
+Each game’s log is encased inside a folder with its game uuid, with the following name.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="o">./</span><span class="n">Team1_Team2_Team3_Team4_Timestamp</span>
+</pre></div>
+</div>
+<p>Inside this folder are two log files that contain all information about the game of interest.
+The first is a json formatted results file that contains a brief summary of the game’s results.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="o">./</span><span class="n">Team1_Team2_Team3_Team4_Timestamp</span><span class="o">/</span><span class="n">results</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>The above json is structured in the following fashion.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="n">Team1_Name</span> <span class="p">:</span> <span class="p">{</span>
+            <span class="n">score</span><span class="p">:</span> <span class="nb">int</span>
+            <span class="n">Team1_Kills</span><span class="p">:</span> <span class="nb">int</span>
+            <span class="n">Team2_Kills</span><span class="p">:</span> <span class="nb">int</span>
+            <span class="n">Team3_Kills</span><span class="p">:</span> <span class="nb">int</span>
+            <span class="n">Team4_Kills</span><span class="p">:</span> <span class="nb">int</span>
+            <span class="n">deadTurns</span><span class="p">:</span> <span class="nb">int</span>
+        <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p>The second is a binary formatted turn-by-turn log file that contains detailed information
+about every element of the game, at every turn.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="o">./</span><span class="n">Team1_Team2_Team3_Team4_Timestamp</span><span class="o">/</span><span class="n">game</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
+<p>This file is not human readable, but we have provided a script that will parse this
+log into a json file. In case you’re curious, we store it as a binary file to reduce
+file size! You can find this script at the following directory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Libraries</span><span class="o">/</span><span class="n">LogParser</span><span class="o">/</span><span class="n">parse_logs</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>The log parser is a command line program, that takes input in the following format.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">python</span> <span class="n">parse_logs</span><span class="o">.</span><span class="n">py</span> <span class="n">source_directory</span> <span class="n">target_directory</span>
+</pre></div>
+</div>
+<p>The source directory is the location of the game.log file that you wish to parse.
+The target directory is the location to which the log parser will write the json file.
+This resulting json file is structured in the following fashion.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="n">Team1_Color</span> <span class="p">:</span> <span class="p">{</span>
+            <span class="n">terr</span><span class="p">:</span> <span class="p">{</span>
+                 <span class="n">turn_num</span> <span class="p">:</span> <span class="p">[(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">)]</span>
+            <span class="p">}</span>
+            <span class="n">body</span><span class="p">:</span> <span class="p">{</span>
+                 <span class="n">turn_num</span> <span class="p">:</span> <span class="p">[(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">)]</span>
+            <span class="p">}</span>
+            <span class="n">unit</span><span class="p">:</span> <span class="p">{</span>
+                 <span class="n">turn_num</span> <span class="p">:</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<div class="core admonition">
+<p class="first admonition-title">Note on LogParser</p>
+<p class="last">If you want to directly integrate the LogParser with your AI, rather than
+using the command line implementation, you are welcome to do so! Simply copy
+the functions you need into your own AI, and modify them if you wish.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Note that writing the log to file only occurs at the conclusion of the turn limit.
+If your game terminates prior to that (perhaps due to error), the above two log files
+will not be written to disk.</p>
+</div>
+</div>
+<div class="section" id="supported-libraries">
+<h3>Supported Libraries<a class="headerlink" href="#supported-libraries" title="Permalink to this headline">¶</a></h3>
+<p>There are too many supervised learning models that could work for the game - and for that
+reason, we won’t elaborate on or encourage certain approaches. However, to help you in
+your machine learning endeavors, we built in popular machine learning libraries
+into our grading machine. If your code has one of the following dependencies,
+our machine will also be able to run it.</p>
+<div class="core admonition">
+<p class="first admonition-title">Supported Python Machine Learning Libraries</p>
+<ul class="last simple">
+<li>TensorFlow</li>
+<li>Pytorch</li>
+<li>Numpy</li>
+<li>Pandas</li>
+</ul>
+</div>
+<p>If you use any other libraries, and have strong reason to believe that it should
+be supported by the Orbis Challenge machine, please send us an email with the
+library, and why currently supported libraries don’t work for your model. If
+your case is compelling, our team will add the requested library into the machine.</p>
+</div>
+</div>
+<div class="section" id="reinforcement-learning">
+<h2>2. Reinforcement Learning<a class="headerlink" href="#reinforcement-learning" title="Permalink to this headline">¶</a></h2>
+<div class="core admonition">
+<p class="first admonition-title">Note on Reinforcement Learning</p>
+<p class="last">This section provides a guideline to one of many reinforcement learning
+approaches that can be applied to this problem. Your implementation can
+and most likely will be different from the approach suggested here!</p>
+</div>
+<div class="section" id="basics">
+<h3>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h3>
+<p>Reinforcement learning is a branch of machine learning where agents are
+trained through their interaction with an environment. The agent, throughout
+its exchange of actions and rewards with the environment, progresses from
+knowing nothing to optimizing actions to maximize reward at each step. A
+successful reinforcement learning AI will find the right balance of exploration
+and exploitation in its interaction with the given environment.</p>
+<div class="core admonition">
+<p class="first admonition-title">Why Reinforcement Learning?</p>
+<p class="last">Reinforcement learning can be effective in coding an AI for Serpentine for two
+reasons. First, the game is very simple! At its core, the game involves devising
+one of four valid moves, given the state of the map. This simplicity allows for
+reinforcement learning AIs to perform surprisingly well, as confirmed by some
+of our secret Orbis AIs. Second, reinforcement learning does not need a training
+set! Its flexibility in allowing agents to adapt to various circumstances is
+another reason why a reinforcement learning agent may be successful here.</p>
+</div>
+</div>
+<div class="section" id="rudimentary-strategy">
+<h3>Rudimentary Strategy<a class="headerlink" href="#rudimentary-strategy" title="Permalink to this headline">¶</a></h3>
+<p>Perhaps a good starting point for coding a Reinforcement learning bot is to
+evaluate when to reward or punish your AI for its behavior. You can define
+these behaviors yourself, or you can use the status supplied by the server every
+turn. You can get this status using the following api call.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">current_status</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">get_friendly_status</span><span class="p">()</span>
+        <span class="o">&gt;&gt;</span> <span class="n">VALID_MOVE</span><span class="p">,</span> <span class="n">INVALID_MOVE</span><span class="p">,</span> <span class="n">BLOCKED_BY_WALL</span><span class="p">,</span> <span class="n">DISABLED</span><span class="p">,</span> <span class="n">TERRITORY_GAIN</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Note that the status that your AI agent receives at turn <em>t</em> is actually the
+status resulting from the move made on turn <em>t - 1</em>.</p>
+</div>
+<p>Then, quantify the rewards that the AI should receive upon receiving this status.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_reward</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return numeric reward (+/-) given with each environment status.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span>
+                <span class="n">STATUS_VALID_MOVE</span>      <span class="p">:</span> <span class="n">REWARD_VALID_MOVE</span><span class="p">,</span>
+                <span class="n">STATUS_INVALID_MOVE</span>    <span class="p">:</span> <span class="n">REWARD_INVALID_MOVE</span><span class="p">,</span>
+                <span class="n">STATUS_BLOCKED_BY_WALL</span> <span class="p">:</span> <span class="n">REWARD_BLOCKED_BY_WALL</span><span class="p">,</span>
+                <span class="n">STATUS_DISABLED</span>        <span class="p">:</span> <span class="n">REWARD_DISABLED</span><span class="p">,</span>
+                <span class="n">STATUS_TERRITORY_GAIN</span>  <span class="p">:</span> <span class="n">REWARD_TERRITORY_GAIN</span><span class="p">,</span>
+                <span class="n">STATUS_RESPAWNED</span>       <span class="p">:</span> <span class="n">REWARD_RESPAWNED</span>
+        <span class="p">}[</span><span class="n">status</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Next, we need to devise a policy that will turn the game state into the
+next move. This may be a deterministic policy, or a stochastic policy depending
+on how you want your AI to behave. Without delving into too much detail, below
+is a skeleton implementation of what a Reinforcement Learning policy could
+look like.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Policy</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Orbis Challenge RL Policy Class.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+                <span class="c1"># Set-up your policy here.</span>
+
+        <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+                <span class="c1"># Use the policy to make a decision on the next move.</span>
+
+        <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rewards</span><span class="p">):</span>
+                <span class="c1"># Train your policy based on the rewards you receive.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+
+          </div>
+          <footer>
+
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+
+
+        <a href="PythonClientAPI.Game.html" class="btn btn-neutral" title="Python Docs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+
+    </div>
+
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Orbis Investment Management Limited.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+
+
+
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/video.js"></script>
+
+
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+</body>
+</html>

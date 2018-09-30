@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Java API Basics &mdash; Orbis Challenge 2018 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom-styles.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Python API Basics" href="pythonapi.html" />
+    <link rel="prev" title="Scoring and Tournament" href="challenge.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Orbis Challenge 2018
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installing Java/Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ide.html">Configuring Your IDE</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="game.html">Game Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="challenge.html">Scoring and Tournament</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Java API Basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#friendly-and-enemy-units">1. Friendly and Enemy Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#points-and-tiles">2. Points and Tiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#world">3. World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#world-tileutils">4. World.TileUtils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#world-pathfinder">5. World.PathFinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#world-floodfiller">6. World.FloodFiller</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pythonapi.html">Python API Basics</a></li>
+<li class="toctree-l1"><a class="reference external" href="_static/javadoc/index.html#://">Java Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PythonClientAPI.Game.html">Python Docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Orbis Challenge 2018</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Java API Basics</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/javaapi.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="java-api-basics">
+<h1>Java API Basics<a class="headerlink" href="#java-api-basics" title="Permalink to this headline">¶</a></h1>
+<p>This page contains the essentials of the Java API. For the full API, see the Java Docs.</p>
+<div class="core admonition">
+<p class="first admonition-title">Essentials of the Essentials</p>
+<p>Your task is to implement the:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">doMove</span><span class="p">(</span><span class="n">World</span> <span class="n">world</span><span class="p">,</span> <span class="n">FriendlyUnit</span> <span class="n">friendlyUnit</span><span class="p">,</span> <span class="n">EnemyUnit</span><span class="p">[]</span> <span class="n">enemyUnits</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>function in the PlayerAI.java file. This function is invoked at each turn in the game. The PlayerAI class is instantiated just once at the beginning of the game,
+and that instance is used for the rest of the game.</p>
+<p class="last">Please be sure to give this a read prior to beginning the challenge!</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Don’t change the function definition for doMove. This function is called by the client code (which you also shouldn’t modify) because when you
+submit your file, only your PlayerAI file and any additional libraries are kept and any client code is removed. Thus, if you change the method,
+your code will cause an Exception and ultimately invalidate all of your work.</p>
+</div>
+<div class="section" id="friendly-and-enemy-units">
+<h2>1. Friendly and Enemy Units<a class="headerlink" href="#friendly-and-enemy-units" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Both FriendlyUnit and EnemyUnit objects have methods that allow you discern its state.</span>
+<span class="c1">// The EnemyUnit object has these same properties as well.</span>
+<span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getPosition</span><span class="o">()</span>
+<span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getStatus</span><span class="o">()</span>
+<span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getBody</span><span class="o">()</span>
+<span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getSnake</span><span class="o">()</span>
+<span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getTerritory</span><span class="o">()</span>
+<span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getTurnPenalty</span><span class="o">()</span>
+
+<span class="c1">// Move your friendly_unit by calling the move method.</span>
+<span class="c1">// For instance, the below moves your unit to the point (3, 3)</span>
+<span class="n">friendlyUnit</span><span class="o">.</span><span class="na">move</span><span class="o">(</span><span class="k">new</span> <span class="n">Point</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">3</span><span class="o">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="points-and-tiles">
+<h2>2. Points and Tiles<a class="headerlink" href="#points-and-tiles" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// The world instance contains a dictionary of points to tiles to help you find tile objects.</span>
+<span class="n">world</span><span class="o">.</span><span class="na">getPositionToTileMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="k">new</span> <span class="n">Point</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">3</span><span class="o">))</span> <span class="o">=</span> <span class="c1">// Tile at Point (3, 3)</span>
+
+<span class="c1">// You can retrieve points from tiles as well.</span>
+<span class="n">tile</span><span class="o">.</span><span class="na">getPosition</span><span class="o">()</span> <span class="o">=</span> <span class="c1">// Point (3, 3)</span>
+
+<span class="c1">// Each tile contains useful information about the state of the tile, informing you of the</span>
+<span class="c1">// ownership of the tile, as well as the presence of bodies / heads on the tile.</span>
+<span class="n">tile</span><span class="o">.</span><span class="na">getOwner</span><span class="o">()</span> <span class="o">=</span> <span class="c1">// Team who owns the tile</span>
+<span class="n">tile</span><span class="o">.</span><span class="na">getBody</span><span class="o">()</span> <span class="o">=</span> <span class="c1">// Team who owns the body on that tile (if any)</span>
+<span class="n">tile</span><span class="o">.</span><span class="na">getHead</span><span class="o">()</span> <span class="o">=</span> <span class="c1">// Team who owns the head on that tile (if any)</span>
+
+<span class="c1">// Each tile also contains useful booleans that should help you in navigating through the map.</span>
+<span class="n">tile</span><span class="o">.</span><span class="na">isNeutral</span><span class="o">()</span> <span class="o">=</span> <span class="c1">// is the tile neutral?</span>
+<span class="n">tile</span><span class="o">.</span><span class="na">isEnemy</span><span class="o">()</span> <span class="o">=</span> <span class="c1">// is the tile enemy territory?</span>
+<span class="n">tile</span><span class="o">.</span><span class="na">isFriendly</span><span class="o">()</span> <span class="o">=</span> <span class="c1">// is the tile friendly territory?</span>
+<span class="n">tile</span><span class="o">.</span><span class="na">isWall</span><span class="o">()</span> <span class="o">=</span> <span class="c1">// is the tile a wall?</span>
+<span class="n">tile</span><span class="o">.</span><span class="na">isEdge</span><span class="o">()</span> <span class="o">=</span> <span class="c1">// is the tile at the edge of the map?</span>
+
+<span class="c1">// These properties can be used to discern the state of the game - for example,</span>
+<span class="c1">// you could determine whether or not you are on enemy territory by checking the following boolean.</span>
+<span class="n">currentTile</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="na">getPositionToTileMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getPosition</span><span class="o">())</span>
+<span class="n">on_enemy_territory</span> <span class="o">=</span> <span class="n">currentTile</span><span class="o">.</span><span class="na">isEnemy</span><span class="o">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="world">
+<h2>3. World<a class="headerlink" href="#world" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// The world class contains methods that tell you information about the map.</span>
+<span class="n">world</span><span class="o">.</span><span class="na">getWidth</span><span class="o">()</span>
+<span class="n">world</span><span class="o">.</span><span class="na">getHeight</span><span class="o">()</span>
+<span class="n">world</span><span class="o">.</span><span class="na">getNeutralPoints</span><span class="o">()</span>
+
+<span class="c1">// It also allows you to check if a point is in-bounds.</span>
+<span class="n">world</span><span class="o">.</span><span class="na">isWithinBounds</span><span class="o">(</span><span class="k">new</span> <span class="n">Point</span><span class="o">(-</span><span class="mi">1</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">))</span> <span class="o">=</span> <span class="n">False</span>
+<span class="n">world</span><span class="o">.</span><span class="na">isWithinBounds</span><span class="o">(</span><span class="k">new</span> <span class="n">Point</span><span class="o">(</span><span class="mi">15</span><span class="o">,</span> <span class="mi">15</span><span class="o">))</span> <span class="o">=</span> <span class="n">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="world-tileutils">
+<h2>4. World.TileUtils<a class="headerlink" href="#world-tileutils" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Within the World class, there is an instance of the TileUtils class.</span>
+<span class="c1">// Using functions in this class will help you turn high level ideas into code fast!</span>
+
+<span class="c1">// Get the closest capturable tile.</span>
+<span class="n">world</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">getClosestCapturableTerritoryFrom</span><span class="o">(</span><span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getPosition</span><span class="o">(),</span> <span class="kc">null</span><span class="o">)</span>
+
+<span class="c1">// Get the closest enemy body (perhaps for an attack!)</span>
+<span class="n">world</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">getClosestEnemyBodyFrom</span><span class="o">(</span><span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getPosition</span><span class="o">(),</span> <span class="kc">null</span><span class="o">)</span>
+
+<span class="c1">// Get the closest friendly territory, avoiding your own body.</span>
+<span class="c1">// (perhaps to return to acquire territory!)</span>
+<span class="n">world</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">getClosestFriendlyTerritoryFrom</span><span class="o">(</span><span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getPosition</span><span class="o">(),</span> <span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getSnake</span><span class="o">())</span>
+
+<span class="c1">// Get the edges of your territory (perhaps to determine exposure, or plan!)</span>
+<span class="n">world</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">getFriendlyTerritoryEdges</span><span class="o">()</span>
+
+<span class="c1">// Note that while friendly_unit.position is used as the argument for the examples above,</span>
+<span class="c1">// you can use these functions to test any point on the map!</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="world-pathfinder">
+<h2>5. World.PathFinder<a class="headerlink" href="#world-pathfinder" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Within the World class, there is an instance of the PathFinder class.</span>
+<span class="c1">// Using functions in this class will help you find your way from one point to another!</span>
+
+<span class="c1">// Find the shortest path from point a to point b, while avoiding points c.</span>
+<span class="n">world</span><span class="o">.</span><span class="na">path</span><span class="o">.</span><span class="na">getShortestPath</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">c</span><span class="o">)</span>
+
+<span class="c1">// Find the next point in the shortest path from point a to point b.</span>
+<span class="n">world</span><span class="o">.</span><span class="na">path</span><span class="o">.</span><span class="na">getNextPointInShortestPath</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span>
+
+<span class="c1">// Use these functions to devise strategies - for example, let&#39;s find a path to the</span>
+<span class="c1">// nearest friendly territory, while avoiding points of our own snake.</span>
+<span class="n">currentPosition</span> <span class="o">=</span> <span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getPosition</span><span class="o">()</span>
+<span class="n">closestFriendlyTile</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="na">path</span><span class="o">.</span><span class="na">getClosestFriendlyTerritoryFrom</span><span class="o">(</span><span class="n">currentPosition</span><span class="o">)</span>
+<span class="n">world</span><span class="o">.</span><span class="na">path</span><span class="o">.</span><span class="na">getShortestPath</span><span class="o">(</span><span class="n">currentPosition</span><span class="o">,</span> <span class="n">closestFriendlyTile</span><span class="o">.</span><span class="na">getPosition</span><span class="o">(),</span> <span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getSnake</span><span class="o">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="world-floodfiller">
+<h2>6. World.FloodFiller<a class="headerlink" href="#world-floodfiller" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// We also give you a function to see which tiles you will fill up, given any</span>
+<span class="c1">// supplied configuration of snakes! For instance, the below code snippet tells you</span>
+<span class="c1">// which points you will capture if you move to the point &#39;next_move&#39;!</span>
+
+<span class="n">body</span> <span class="o">=</span> <span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getBody</span><span class="o">()</span>
+<span class="n">territory</span> <span class="o">=</span> <span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getTerritory</span><span class="o">()</span>
+<span class="n">unit</span> <span class="o">=</span> <span class="n">friendlyUnit</span><span class="o">.</span><span class="na">getPosition</span><span class="o">()</span>
+<span class="n">world</span><span class="o">.</span><span class="na">fill</span><span class="o">.</span><span class="na">floodFill</span><span class="o">(</span><span class="n">body</span><span class="o">,</span> <span class="n">territory</span><span class="o">,</span> <span class="n">unit</span><span class="o">,</span> <span class="n">next_move</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pythonapi.html" class="btn btn-neutral float-right" title="Python API Basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="challenge.html" class="btn btn-neutral" title="Scoring and Tournament" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Orbis Investment Management Limited.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/video.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

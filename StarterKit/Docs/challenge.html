@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Scoring and Tournament &mdash; Orbis Challenge 2018 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom-styles.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Java API Basics" href="javaapi.html" />
+    <link rel="prev" title="Game Introduction" href="game.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Orbis Challenge 2018
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installing Java/Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ide.html">Configuring Your IDE</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="game.html">Game Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Scoring and Tournament</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#grading-scheme">1. Grading Scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submissions">2. Submissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#live-leaderboard-and-competition">3. Live Leaderboard and Competition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-recent-matches">4. Viewing Recent Matches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#game-settings">5. Game Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#grading-in-detail">6. Grading in Detail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-review">7. Code Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#presentation">8. Presentation</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">Java API Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythonapi.html">Python API Basics</a></li>
+<li class="toctree-l1"><a class="reference external" href="_static/javadoc/index.html#://">Java Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PythonClientAPI.Game.html">Python Docs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Orbis Challenge 2018</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Scoring and Tournament</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/challenge.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="scoring-and-tournament">
+<h1>Scoring and Tournament<a class="headerlink" href="#scoring-and-tournament" title="Permalink to this headline">¶</a></h1>
+<p>Below, you can find information on how to do well in the Challenge!</p>
+<div class="section" id="grading-scheme">
+<h2>1. Grading Scheme<a class="headerlink" href="#grading-scheme" title="Permalink to this headline">¶</a></h2>
+<p>Very simply, each team earns 1 point per tile owned at the end of the game (300 turns).</p>
+</div>
+<div class="section" id="submissions">
+<h2>2. Submissions<a class="headerlink" href="#submissions" title="Permalink to this headline">¶</a></h2>
+<p>Follow the below steps when you are ready to submit your AI.</p>
+<ol class="arabic simple">
+<li>Zip up the AI code (just your AI, not the game libraries!)</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Upon submission, your zip file is renamed with the naming convention “team_name.zip”.
+Make sure you don’t make any absolute file references in your code that may be impacted
+by folder names!</p>
+</div>
+<div class="core admonition">
+<p class="first admonition-title">Compatible Python Libraries</p>
+<p>We have installed the following non-standard python libraries on our grading machine.
+All other libraries, if you choose to use them, must be zipped up with the bot on
+your submission.</p>
+<ul class="last simple">
+<li>Numpy</li>
+<li>Matplotlib</li>
+<li>Tensorflow</li>
+<li>Pytorch</li>
+<li>Pandas</li>
+</ul>
+</div>
+<ol class="arabic simple" start="2">
+<li>Upload your newly created archives on ‘Submit your AI’ on your dashboard on the Orbis Challenge website. If you are working in a team, only one member has to upload it.</li>
+</ol>
+<div class="core admonition">
+<p class="first admonition-title">Resubmissions and Versions</p>
+<p class="last">You’re welcome to submit more than once!
+Previous submissions of your AI are also available for download on the submission portal.</p>
+</div>
+</div>
+<div class="section" id="live-leaderboard-and-competition">
+<h2>3. Live Leaderboard and Competition<a class="headerlink" href="#live-leaderboard-and-competition" title="Permalink to this headline">¶</a></h2>
+<p>Throughout the tournament, a live leaderboard will track your place amongst competitors (provided
+that you made a submission). We’re constantly simulating games with the <strong>latest</strong> submissions of
+competitors’ AIs, and the Glicko-2 system is used to place these AIs on the leaderboard. Note that
+the precise rank of Top 5 competitors are not disclosed.</p>
+<div class="core admonition">
+<p class="first admonition-title">Live Leaderboard vs. Final Rank</p>
+<p class="last">Live leaderboard ranks are not final! After the conclusion of the tournament, we simulate more
+games to ensure that our rankings are accurate. However, it should give a good idea of your standing
+amongst Orbis Challenge competitors.</p>
+</div>
+<p>At the conclusion of the tournament, we run many more games to accurately determine Top 20 AIs from submissions.
+These Top 20 AIs are holistically evaluated by both performance and code review to narrow down the Top 5 AIs.
+Winners get to give a short presentation about their AI!</p>
+</div>
+<div class="section" id="viewing-recent-matches">
+<h2>4. Viewing Recent Matches<a class="headerlink" href="#viewing-recent-matches" title="Permalink to this headline">¶</a></h2>
+<p>Throughout the tournament, you can also check out recent matches on the
+‘View Recent Matches’ tab on your dashboard. This contains information about
+which AI you faced off against, final scores, as well as the turns that all AIs
+spent disabled. Logs from these games are also available for download, in case
+you want to take a closer look at your AI’s performance.</p>
+</div>
+<div class="section" id="game-settings">
+<h2>5. Game Settings<a class="headerlink" href="#game-settings" title="Permalink to this headline">¶</a></h2>
+<p>All games will be played using the following settings:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Board is symmetrical, and its size is set at 30 x 30.</li>
+<li>Maximum amount of time allowed for your AI to make a move is 600 milliseconds.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="grading-in-detail">
+<h2>6. Grading in Detail<a class="headerlink" href="#grading-in-detail" title="Permalink to this headline">¶</a></h2>
+<p>As the game is a 4 player game, grading is not as simple as having 1 winner each game!
+We follow the below steps to tune the Glicko-2 rating of each AI after each simulation.</p>
+<ol class="arabic simple">
+<li>Retrieve results from the game (scores of each AI).</li>
+<li>Derive a pair-wise game matrix for all four AIs involved.</li>
+<li>Re-evaluate Glicko-2 rating based on the pair-wise performance of each AI.</li>
+</ol>
+<div class="core admonition">
+<p class="first admonition-title">Example Game</p>
+<p>For instance, consider the following outcome of a game - A: 100, B: 75, C: 50, D: 25.
+We transform these game results into a pair-wise matrix as follows.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&#160;</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+</tr>
+<tr class="row-even"><td>A</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>L</td>
+<td>L</td>
+<td>L</td>
+</tr>
+<tr class="row-odd"><td>B</td>
+<td>W</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>L</td>
+<td>L</td>
+</tr>
+<tr class="row-even"><td>C</td>
+<td>W</td>
+<td>W</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>L</td>
+</tr>
+<tr class="row-odd"><td>D</td>
+<td>W</td>
+<td>W</td>
+<td>W</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="last">Essentially, each game turns into 3 games for each player, against every other
+opponent in the game. This way, the second place AI is still rewarded for its
+relatively good performance, while the last place AI is punished for its underperformance.</p>
+</div>
+</div>
+<div class="section" id="code-review">
+<h2>7. Code Review<a class="headerlink" href="#code-review" title="Permalink to this headline">¶</a></h2>
+<p>This is the part where we evaluate your code!
+Your AI has proven that it can perform, but how well-coded is it? Be sure to make your code as readable as possible and leave some comments for the code reviewers to read!</p>
+</div>
+<div class="section" id="presentation">
+<h2>8. Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h2>
+<p>The teams that have their submissions land in the top 5 after the playoffs and code review are
+asked to give a short presentation to talk about their key strategies, the problems they faced and how they overcame them.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="javaapi.html" class="btn btn-neutral float-right" title="Java API Basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="game.html" class="btn btn-neutral" title="Game Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Orbis Investment Management Limited.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/video.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Game Introduction &mdash; Orbis Challenge 2018 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom-styles.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Scoring and Tournament" href="challenge.html" />
+    <link rel="prev" title="Configuring your IDE" href="ide.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Orbis Challenge 2018
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installing Java/Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ide.html">Configuring Your IDE</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Game Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#demo-video">1. Demo video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definitions-and-game-rules">2. Definitions and Game Rules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#snakes">Snakes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tiles-and-walls">Tiles and Walls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#map">Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#turn-limit">Turn Limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#turn-timeout">Turn Timeout</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#main-objective">3. Main objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#turns">4. Turns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-world">5. The World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#game-play-examples">6. Game-play Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#no-gui-launching">7. No-GUI Launching</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="challenge.html">Scoring and Tournament</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="javaapi.html">Java API Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythonapi.html">Python API Basics</a></li>
+<li class="toctree-l1"><a class="reference external" href="_static/javadoc/index.html#://">Java Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PythonClientAPI.Game.html">Python Docs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Orbis Challenge 2018</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Game Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/game.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="game-introduction">
+<h1>Game Introduction<a class="headerlink" href="#game-introduction" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/gameplay_shot.png"><img alt="_images/gameplay_shot.png" src="_images/gameplay_shot.png" style="width: 320px;" /></a>
+</div>
+<div class="core admonition">
+<p class="first admonition-title">Core Rules</p>
+<p>The game is very straightforward to understand, but difficult to master!
+These core rules give enough information to get started, but you can scroll down
+for more detailed information.</p>
+<ul class="last">
+<li><p class="first"><strong>Objective</strong>: Expand your territory on a tile-based board.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Each tile on the board represents territory, and 1 tile = 1 point.</li>
+<li>Each team starts with a 3 by 3 grid territory on the map.</li>
+<li>Team with the highest score at the end of 300 turns wins!</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Unit</strong>: Each team controls a single snake agent.</p>
+<blockquote>
+<div><ul class="simple">
+<li>The snake agent can move to any of the four directly adjacent tiles.</li>
+<li>Once the snake agent leaves its territory, its body starts growing (following its path).</li>
+<li>When the snake agent returns to its territory, the body disappears.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Territory Acquisition</strong>: Acquire territory by enclosing tiles.</p>
+<blockquote>
+<div><ul class="simple">
+<li>If the snake agent leaves its territory then returns, all neutral and enemy tiles enclosed by its body turns into friendly territory.</li>
+<li>No territory is permanent, enemies can capture your territory at any time.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Kills</strong>: Disable enemy snakes by running your snake’s head into enemy snakes’ body.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Disabled snakes rest for 25 turns prior to re-spawning inside their territory.</li>
+<li>Head-to-head collisions result in the death of both snakes involved.</li>
+<li>Running into your own body results in a suicide.</li>
+<li>No points are awarded for disabling other snakes.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="demo-video">
+<h2>1. Demo video<a class="headerlink" href="#demo-video" title="Permalink to this headline">¶</a></h2>
+<video class="large" controls poster="_images/video_placeholder_square.png" onclick="playPauseVideo(this);">
+        <source src="_static/videos/gameplay.mp4" type="video/mp4">
+        Your browser does not support the HTML5 video tag. Try a different browser.
+</video><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="definitions-and-game-rules">
+<h2>2. Definitions and Game Rules<a class="headerlink" href="#definitions-and-game-rules" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="snakes">
+<h3>Snakes<a class="headerlink" href="#snakes" title="Permalink to this headline">¶</a></h3>
+<p><img alt="unit_red" src="_images/RED_UNIT.png" /> <img alt="unit_blue" src="_images/BLUE_UNIT.png" /> <img alt="unit_green" src="_images/GREEN_UNIT.png" /> <img alt="unit_purple" src="_images/PURPLE_UNIT.png" /></p>
+<p><img alt="body_red" src="_images/RED_BODY.png" /> <img alt="body_blue" src="_images/BLUE_BODY.png" /> <img alt="body_green" src="_images/GREEN_BODY.png" /> <img alt="body_purple" src="_images/PURPLE_BODY.png" /></p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="first docutils">
+<dt>Movement</dt>
+<dd>You can move your snake agent one tile distance per turn in any one of the four cardinal directions: north, east, south or west.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Snake Head and Body</dt>
+<dd>Inside friendly territory, the snake agent consists of just its head. Once the
+snake agent moves outside of friendly territory (either into neutral or enemy territory),
+a body grows indefinitely following its path. This body remains on the map until either a) the head
+of the snake agent returns to friendly territory, or b) the snake agent dies.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Territory Acquisition</dt>
+<dd>A team can acquire tiles by enclosing them with their snake agent. In other words,
+if the snake agent leaves its territory and returns, all area enclosed by its path
+(including its path) turns into its territory. Territory acquisition works the same
+way for both neutral and enemy tiles, since no tile is permanently owned by a team in the game.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Attacking</dt>
+<dd>A snake can attack an enemy snake by running its head into an enemy snake’s body. If this occurs,
+the attacked snake is disabled for 25 turns, and all of its body disappears. If two snakes run into
+each other head-to-head, both are disabled for 25 turns.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Suicides</dt>
+<dd>If a snake runs its head into its own body, it is disabled and rests for 25 turns.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Disabled Snakes</dt>
+<dd>Disabled snakes are taken off the map for 25 turns, and any move submitted by the AI will not impact the game state.
+However, note that submitting moves while being disabled does not penalize the AI in any way.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Invalid Moves</dt>
+<dd>If an agent makes an invalid move (does not select a move one tile distance away) at any point, the agent
+will repeat its last valid move. If there is no last valid move (i.e. the first move of the game was an
+invalid move), the agent will make a random move to one of four valid tiles.</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">As per the suicide rule, if an agent moves back on its body (goes from point A to B, then back to A),
+while outside its territory, it will be disabled for 25 turns. This means that while the agent has the freedom
+to move into any of its four adjacent tiles at any point, only three of those moves will enable the agent to continue
+given that it is currently outside its territory.</p>
+</div>
+</div>
+<div class="section" id="tiles-and-walls">
+<h3>Tiles and Walls<a class="headerlink" href="#tiles-and-walls" title="Permalink to this headline">¶</a></h3>
+<p><img alt="tile_red" src="_images/RED_TILE.png" /> <img alt="tile_blue" src="_images/BLUE_TILE.png" /> <img alt="tile_green" src="_images/GREEN_TILE.png" /> <img alt="tile_purple" src="_images/PURPLE_TILE.png" /> <img alt="tile_neutral" src="_images/NEUTRAL_TILE.png" /> <img alt="wall" src="_images/WALL_TILE.png" /></p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="first docutils">
+<dt>Starting Configuration</dt>
+<dd>Each team starts with a 3 by 3 grid of territory on the map.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Movement around Tiles</dt>
+<dd>Units are free to move into any tile, regardless of its current ownership.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Walls</dt>
+<dd>Units cannot move into walls. If a unit chooses to move into the wall, its move is
+nullified and the unit rests at the wall.</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="map">
+<h3>Map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>The map is symmetrical, and does not wrap.
+The map is organized by (x, y) coordinates, counted by tiles.
+The top left coordinate of the map is (0, 0). The x-coordinate increases rightwards, and the y-coordinate increases downwards.</div></blockquote>
+</div>
+<div class="section" id="turn-limit">
+<h3>Turn Limit<a class="headerlink" href="#turn-limit" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>The game will run for 300 turns.</div></blockquote>
+</div>
+<div class="section" id="turn-timeout">
+<h3>Turn Timeout<a class="headerlink" href="#turn-timeout" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>In the tournament, the server will wait for AIs to return next moves only up to 600ms (but you can configure this in the launcher for testing purposes).
+Keep this in mind if your AI performs time-expensive operations.
+It’s okay if you exceed the turn timeout once or twice - the game will continue running, and your snake agent will repeat its previous valid move.</div></blockquote>
+</div>
+</div>
+<div class="section" id="main-objective">
+<h2>3. Main objective<a class="headerlink" href="#main-objective" title="Permalink to this headline">¶</a></h2>
+<p>The main objective is simple: capture the most territory by the end of 300 turns.
+You receive one point for each tile owned at turn 300. The player with the highest
+point wins.</p>
+<div class="core admonition">
+<p class="first admonition-title">Scoring</p>
+<p class="last">Since the game is a four-player one, each game does not simply result in one winner.
+Each game is converted into a pair-wise game between each of the four participants to
+adjust each AI’s standing. More information on this can be found <a class="reference external" href="./challenge.html">here</a>.</p>
+</div>
+</div>
+<div class="section" id="turns">
+<h2>4. Turns<a class="headerlink" href="#turns" title="Permalink to this headline">¶</a></h2>
+<p>The game is simultaneous turn-based, which means that moves from all four players are executed simultaneously per turn.
+Each AI must make a move each turn (failure to submit a move will result in it being counted as an invalid move).</p>
+<p>At each turn, the server executes in order:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Re-spawns</dt>
+<dd><ul class="first last">
+<li>Disabled units that finished its 25 turn penalties are re-spawned.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Validating Moves</dt>
+<dd><ul class="first last">
+<li>Moves are always validated prior to processing. In the case of an invalid move, the previous valid move is repeated.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Movement</dt>
+<dd><ul class="first last">
+<li>All snakes’ unit positions and body positions (if needed) are updated.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Attacks and Deaths</dt>
+<dd><ul class="first last">
+<li>Head-to-body attacks, head-to-head attacks, and suicides are processed simultaneously for all units.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Tile Color Change</dt>
+<dd><ul class="first last">
+<li>Any enclosed tiles switch ownership.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="the-world">
+<h2>5. The World<a class="headerlink" href="#the-world" title="Permalink to this headline">¶</a></h2>
+<p>The world is situated on a symmetrical tile-based map. Each square on the map is either a tile or a wall. Initially, all tiles except for each team’s 3 by 3 starting configurations are neutral. The world does not wrap, and in all maps are surrounded by walls at all edges.</p>
+<a class="reference internal image-reference" href="_images/World.png"><img alt="_images/World.png" class="align-center" src="_images/World.png" style="width: 280px;" /></a>
+<div class="core admonition">
+<p class="first admonition-title">Maps</p>
+<p class="last">The starter pack includes two different maps that you can use for running your bot in the Maps folder.
+Note that the tournament will use only the standard map.</p>
+</div>
+</div>
+<div class="section" id="game-play-examples">
+<h2>6. Game-play Examples<a class="headerlink" href="#game-play-examples" title="Permalink to this headline">¶</a></h2>
+<p>Below, you can find key game play and rules, accompanied by videos of each.</p>
+<p>Units can acquire territory by enclosing an area with their body. Note how once the territory is acquired,
+the snake’s body disappears. Acquiring enemy territory works the exact same way as acquiring neutral territory.</p>
+<video style="width: 390px" controls poster="_images/video_placeholder_square.png" onclick="playPauseVideo(this);">
+        <source src="_static/videos/Capture3.mp4" type="video/mp4">
+        Your browser does not support the HTML5 video tag. Try a different browser.
+</video>
+<p class="caption"><em>Territory Acquisition by Blue and Red Snakes</em></p><video style="width: 390px" controls poster="_images/video_placeholder_square.png" onclick="playPauseVideo(this);">
+        <source src="_static/videos/steal3.mp4" type="video/mp4">
+        Your browser does not support the HTML5 video tag. Try a different browser.
+</video>
+<p class="caption"><em>Red and Green Snakes steal Purple Territory</em></p><p>Units can kill enemy units by running its head into their body.</p>
+<video style="width: 390px" controls poster="_images/video_placeholder_square.png" onclick="playPauseVideo(this);">
+        <source src="_static/videos/attack3.mp4" type="video/mp4">
+        Your browser does not support the HTML5 video tag. Try a different browser.
+</video>
+<p class="caption"><em>Blue Snake Kills Red Snake</em></p><video style="width: 390px" controls poster="_images/video_placeholder_square.png" onclick="playPauseVideo(this);">
+        <source src="_static/videos/defend3.mp4" type="video/mp4">
+        Your browser does not support the HTML5 video tag. Try a different browser.
+</video>
+<p class="caption"><em>Purple Snake gets caught in Red Territory</em></p><p>Units are disabled if at any point, the head of the unit comes in contact with its body.</p>
+<video style="width: 222px" controls poster="_images/video_placeholder_square.png" onclick="playPauseVideo(this);">
+        <source src="_static/videos/suicide.mp4" type="video/mp4">
+        Your browser does not support the HTML5 video tag. Try a different browser.
+</video>
+<p class="caption"><em>Suicide by Green Snake</em></p><div class="core admonition">
+<p class="first admonition-title">Final Note</p>
+<p class="last">Essentially, at the game’s core, your AI just needs to move the snake
+agent into one of four adjacent tiles! While this makes it very easy to code
+a basic AI, a successful AI will need sophisticated strategies for both capturing
+territory, and dealing with enemies. Best of luck!</p>
+</div>
+</div>
+<div class="section" id="no-gui-launching">
+<h2>7. No-GUI Launching<a class="headerlink" href="#no-gui-launching" title="Permalink to this headline">¶</a></h2>
+<p>If you want the game to run as fast as possible, and don’t care for graphics,
+you have the option of launching the game via command line! This is likely
+a good option if you are training a machine learning algorithm, and need to
+run a lot of games fast. The command line function for this is shown below.
+Make sure to navigate to the folder that contains Serpentine.jar prior to
+running this command!</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="n">Serpentine</span><span class="o">.</span><span class="n">jar</span>
+      <span class="o">--</span><span class="n">nogui</span><span class="o">-</span><span class="n">l</span>
+      <span class="o">--</span><span class="n">nogui</span><span class="o">-</span><span class="n">s</span>
+      <span class="o">--</span><span class="n">config</span><span class="o">.</span><span class="n">map</span> <span class="n">Standard</span>
+      <span class="o">--</span><span class="n">config</span><span class="o">.</span><span class="n">red</span> <span class="n">BOT1_NAME</span>
+      <span class="o">--</span><span class="n">config</span><span class="o">.</span><span class="n">blue</span> <span class="n">BOT2_NAME</span>
+      <span class="o">--</span><span class="n">config</span><span class="o">.</span><span class="n">green</span> <span class="n">BOT3_NAME</span>
+      <span class="o">--</span><span class="n">config</span><span class="o">.</span><span class="n">purple</span> <span class="n">BOT4_NAME</span>
+      <span class="o">--</span><span class="n">config</span><span class="o">.</span><span class="n">turns</span> <span class="mi">300</span>
+      <span class="o">--</span><span class="n">config</span><span class="o">.</span><span class="n">port</span> <span class="mi">4439</span>
+</pre></div>
+</div>
+<p>If you still want the launcher to configure your settings, but don’t want
+the GUI for the game, run the following command.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="n">Serpentine</span><span class="o">.</span><span class="n">jar</span> <span class="o">--</span><span class="n">nogui</span><span class="o">-</span><span class="n">s</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="challenge.html" class="btn btn-neutral float-right" title="Scoring and Tournament" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ide.html" class="btn btn-neutral" title="Configuring your IDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Orbis Investment Management Limited.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/video.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
