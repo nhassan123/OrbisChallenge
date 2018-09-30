@@ -11,6 +11,7 @@ class PlayerAI:
         self.turn_count = 0             # game turn count
         self.target = None              # target to send unit to!
         self.outbound = True            # is the unit leaving, or returning?
+        self.run = 0 
 
     def do_move(self, world, friendly_unit, enemy_units):
         '''
@@ -49,10 +50,12 @@ class PlayerAI:
             for edge in edges:
                 avoid += [pos for pos in world.get_neighbours(edge.position).values()]
             self.target = world.util.get_closest_capturable_territory_from(friendly_unit.position, avoid)
+            self.run +=1
 
         # else if inbound and no target set, set target as the closest friendly tile
-        elif not self.outbound and self.target is None:
+        elif not self.outbound and self.target is None and self.run == 2:
             self.target = world.util.get_closest_friendly_territory_from(friendly_unit.position, None)
+            self.run = 0
 
         # set next move as the next point in the path to target
         next_move = world.path.get_shortest_path(friendly_unit.position, self.target.position, friendly_unit.snake)[0]
