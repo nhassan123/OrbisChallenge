@@ -51,7 +51,11 @@ class PlayerAI:
             avoid = []
             for edge in edges:
                 avoid += [pos for pos in world.get_neighbours(edge.position).values()]
-            self.target = world.util.get_closest_capturable_territory_from(friendly_unit.position, avoid)
+            point = add_points(friendly_unit.position, (10,10))
+            self.target = world.util.get_closest_capturable_territory_from(point, avoid)
+            #point = add_points(self.target.position, (0,7))
+            #if is_within_bounds(point):
+                
 
         # else if inbound and no target set, set target as the closest friendly tile
         elif not self.outbound and self.target is None:
