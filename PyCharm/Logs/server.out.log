@@ -1,4 +1,4 @@
-[8773430] Using port 4461
+[19799069] Using port 4461
 Server waiting for client
 Connected player with UUID Blue-Perpentine
 Assigned index 1
@@ -11,9 +11,9 @@ Assigned index 3
 Server waiting for client
 Connected player with UUID Red
 Assigned index 0
-[8777922] Processing the map...
-[8778015] Initializing controllers...
-[8778019] Initializing the game...
+[19810932] Processing the map...
+[19811064] Initializing controllers...
+[19811069] Initializing the game...
 [0] Red (Comm open) - sending GET_READY...
 [0] Red (Comm open) - Ready!
 [1] Blue-Perpentine (Comm open) - sending GET_READY...
@@ -22,152 +22,339 @@ Assigned index 0
 [2] Green-Perpentine (Comm open) - Ready!
 [3] Purple-Perpentine (Comm open) - sending GET_READY...
 [3] Purple-Perpentine (Comm open) - Ready!
-[8778578] Turn number: 0
-[8778579] ----------------------------------------------------
-[8779268] Turn number: 1
-[8779268] ----------------------------------------------------
-[8779945] Turn number: 2
-[8779945] ----------------------------------------------------
-[8780635] Turn number: 3
-[8780635] ----------------------------------------------------
-[8781307] Turn number: 4
-[8781307] ----------------------------------------------------
-[8781976] Turn number: 5
-[8781976] ----------------------------------------------------
-[8782579] Red Acquired Territory, now at  (4, 2)
-[8782579] Blue-Perpentine Acquired Territory, now at  (27, 4)
-[8782580] Green-Perpentine Acquired Territory, now at  (27, 25)
-[8782580] Purple-Perpentine Acquired Territory, now at  (4, 25)
-[8782657] Turn number: 6
-[8782657] ----------------------------------------------------
-[8783326] Turn number: 7
-[8783326] ----------------------------------------------------
-[8783993] Turn number: 8
-[8783993] ----------------------------------------------------
-[8784661] Turn number: 9
-[8784661] ----------------------------------------------------
-[8785331] Turn number: 10
-[8785331] ----------------------------------------------------
-[8785996] Turn number: 11
-[8785996] ----------------------------------------------------
-[8786598] Blue-Perpentine Acquired Territory, now at  (25, 4)
-[8786666] Turn number: 12
-[8786666] ----------------------------------------------------
-[8787268] Red Acquired Territory, now at  (6, 3)
-[8787268] Green-Perpentine Acquired Territory, now at  (26, 23)
-[8787268] Purple-Perpentine Acquired Territory, now at  (3, 23)
-[8787329] Turn number: 13
-[8787329] ----------------------------------------------------
-[8787991] Turn number: 14
-[8787991] ----------------------------------------------------
-[8788658] Turn number: 15
-[8788658] ----------------------------------------------------
-[8789349] Turn number: 16
-[8789349] ----------------------------------------------------
-[8790015] Turn number: 17
-[8790015] ----------------------------------------------------
-[8790617] Blue-Perpentine Acquired Territory, now at  (25, 2)
-[8790682] Turn number: 18
-[8790682] ----------------------------------------------------
-[8791348] Turn number: 19
-[8791348] ----------------------------------------------------
-[8791950] Red Acquired Territory, now at  (6, 2)
-[8791950] Green-Perpentine Acquired Territory, now at  (27, 23)
-[8791950] Purple-Perpentine Acquired Territory, now at  (4, 23)
-[8792013] Turn number: 20
-[8792013] ----------------------------------------------------
-[8792677] Turn number: 21
-[8792677] ----------------------------------------------------
-[8793340] Turn number: 22
-[8793341] ----------------------------------------------------
-[8794019] Turn number: 23
-[8794019] ----------------------------------------------------
-[8794687] Turn number: 24
-[8794687] ----------------------------------------------------
-[8795289] Blue-Perpentine Acquired Territory, now at  (26, 6)
-[8795357] Turn number: 25
-[8795358] ----------------------------------------------------
-[8796023] Turn number: 26
-[8796023] ----------------------------------------------------
-[8796625] Purple-Perpentine Acquired Territory, now at  (4, 22)
-[8796695] Turn number: 27
-[8796696] ----------------------------------------------------
-[8797297] Red Acquired Territory, now at  (8, 2)
-[8797297] Green-Perpentine Acquired Territory, now at  (27, 21)
-[8797372] Turn number: 28
-[8797372] ----------------------------------------------------
-[8798039] Turn number: 29
-[8798039] ----------------------------------------------------
-[8798708] Turn number: 30
-[8798708] ----------------------------------------------------
-[8799374] Turn number: 31
-[8799374] ----------------------------------------------------
-[8799976] Blue-Perpentine Acquired Territory, now at  (24, 5)
-[8800042] Turn number: 32
-[8800043] ----------------------------------------------------
-[8800715] Turn number: 33
-[8800715] ----------------------------------------------------
-[8801316] Red Acquired Territory, now at  (9, 3)
-[8801316] Green-Perpentine Acquired Territory, now at  (26, 20)
-[8801386] Turn number: 34
-[8801387] ----------------------------------------------------
-[8802057] Turn number: 35
-[8802058] ----------------------------------------------------
-[8802659] Purple-Perpentine Acquired Territory, now at  (4, 21)
-[8802726] Turn number: 36
-[8802727] ----------------------------------------------------
-[8803328] Blue-Perpentine Acquired Territory, now at  (23, 3)
-[8803443] Turn number: 37
-[8803443] ----------------------------------------------------
-[8804083] Turn number: 38
-[8804083] ----------------------------------------------------
-[8804747] Turn number: 39
-[8804748] ----------------------------------------------------
-[8805419] Turn number: 40
-[8805420] ----------------------------------------------------
-[8806079] Turn number: 41
-[8806079] ----------------------------------------------------
-[8806681] Red Acquired Territory, now at  (10, 2)
-[8806681] Blue-Perpentine Acquired Territory, now at  (23, 2)
-[8806681] Green-Perpentine Acquired Territory, now at  (27, 19)
-[8806682] Purple-Perpentine Acquired Territory, now at  (4, 19)
-[8806745] Turn number: 42
-[8806745] ----------------------------------------------------
-[8807411] Turn number: 43
-[8807411] ----------------------------------------------------
-[8808071] Turn number: 44
-[8808071] ----------------------------------------------------
-[8808736] Turn number: 45
-[8808736] ----------------------------------------------------
-[8809392] Turn number: 46
-[8809392] ----------------------------------------------------
-[8810054] Turn number: 47
-[8810054] ----------------------------------------------------
-[8810656] Blue-Perpentine Acquired Territory, now at  (22, 1)
-[8810726] Turn number: 48
-[8810726] ----------------------------------------------------
-[8811328] Red Acquired Territory, now at  (12, 3)
-[8811328] Green-Perpentine Acquired Territory, now at  (26, 17)
-[8811329] Purple-Perpentine Acquired Territory, now at  (5, 19)
-[8811388] Turn number: 49
-[8811388] ----------------------------------------------------
-[8812058] Turn number: 50
-[8812058] ----------------------------------------------------
-[8812731] Turn number: 51
-[8812732] ----------------------------------------------------
-[8813407] Turn number: 52
-[8813407] ----------------------------------------------------
-[8814074] Turn number: 53
-[8814074] ----------------------------------------------------
-[8814743] Turn number: 54
-[8814743] ----------------------------------------------------
-[8815345] Blue-Perpentine Acquired Territory, now at  (22, 4)
-[8815405] Turn number: 55
-[8815405] ----------------------------------------------------
-[8816007] Red Acquired Territory, now at  (12, 2)
-[8816007] Green-Perpentine Acquired Territory, now at  (27, 17)
-[8816007] Purple-Perpentine Acquired Territory, now at  (5, 18)
-[8816076] Turn number: 56
-[8816076] ----------------------------------------------------
-[8816732] Turn number: 57
-[8816732] ----------------------------------------------------
+[19811867] Turn number: 0
+[19811868] Empty move from player 0
+[19811868] Empty move from player 1
+[19811868] Empty move from player 2
+[19811868] Empty move from player 3
+[19811868] ----------------------------------------------------
+[19812599] Turn number: 1
+[19812599] Empty move from player 0
+[19812599] Empty move from player 1
+[19812600] Empty move from player 2
+[19812600] Empty move from player 3
+[19812600] ----------------------------------------------------
+[19813289] Turn number: 2
+[19813289] Empty move from player 0
+[19813289] Empty move from player 1
+[19813289] Empty move from player 2
+[19813289] Empty move from player 3
+[19813290] ----------------------------------------------------
+[19814051] Turn number: 3
+[19814051] Empty move from player 0
+[19814051] Empty move from player 1
+[19814052] Empty move from player 2
+[19814052] Empty move from player 3
+[19814052] ----------------------------------------------------
+[19814723] Turn number: 4
+[19814723] Empty move from player 0
+[19814723] Empty move from player 1
+[19814724] Empty move from player 2
+[19814724] Empty move from player 3
+[19814724] ----------------------------------------------------
+[19815418] Turn number: 5
+[19815418] Empty move from player 0
+[19815418] Empty move from player 1
+[19815418] Empty move from player 2
+[19815423] Empty move from player 3
+[19815423] ----------------------------------------------------
+[19816121] Turn number: 6
+[19816121] Empty move from player 0
+[19816122] Empty move from player 1
+[19816122] Empty move from player 2
+[19816122] Empty move from player 3
+[19816123] ----------------------------------------------------
+[19816823] Turn number: 7
+[19816823] Empty move from player 0
+[19816823] Empty move from player 1
+[19816823] Empty move from player 2
+[19816823] Empty move from player 3
+[19816823] ----------------------------------------------------
+[19817553] Turn number: 8
+[19817554] Empty move from player 0
+[19817554] Empty move from player 1
+[19817556] Empty move from player 2
+[19817556] Empty move from player 3
+[19817556] ----------------------------------------------------
+[19818267] Turn number: 9
+[19818267] Empty move from player 0
+[19818267] Empty move from player 1
+[19818267] Empty move from player 2
+[19818267] Empty move from player 3
+[19818267] ----------------------------------------------------
+[19818980] Turn number: 10
+[19818980] Empty move from player 0
+[19818981] Empty move from player 1
+[19818981] Empty move from player 2
+[19818981] Empty move from player 3
+[19818981] ----------------------------------------------------
+[19819654] Turn number: 11
+[19819654] Empty move from player 0
+[19819655] Empty move from player 1
+[19819655] Empty move from player 2
+[19819655] Empty move from player 3
+[19819655] ----------------------------------------------------
+[19820262] Red Head on Collision at  (3, 15)
+[19820263] Red Head on Collision at  (3, 14)
+[19820263] Red Died at  (3, 15)
+[19820263] Purple-Perpentine Died at  (3, 14)
+[19820359] Turn number: 12
+[19820359] Empty move from player 1
+[19820359] Empty move from player 2
+[19820360] ----------------------------------------------------
+[19821042] Turn number: 13
+[19821042] Empty move from player 1
+[19821042] Empty move from player 2
+[19821042] ----------------------------------------------------
+[19821732] Turn number: 14
+[19821733] Empty move from player 1
+[19821733] Empty move from player 2
+[19821733] ----------------------------------------------------
+[19822418] Turn number: 15
+[19822418] Empty move from player 1
+[19822418] Empty move from player 2
+[19822418] ----------------------------------------------------
+[19823150] Turn number: 16
+[19823150] Empty move from player 1
+[19823150] Empty move from player 2
+[19823150] ----------------------------------------------------
+[19823825] Turn number: 17
+[19823825] Empty move from player 1
+[19823825] Empty move from player 2
+[19823826] ----------------------------------------------------
+[19824533] Turn number: 18
+[19824534] Empty move from player 1
+[19824534] Empty move from player 2
+[19824534] ----------------------------------------------------
+[19825243] Turn number: 19
+[19825243] Empty move from player 1
+[19825243] Empty move from player 2
+[19825243] ----------------------------------------------------
+[19825937] Turn number: 20
+[19825937] Empty move from player 1
+[19825937] Empty move from player 2
+[19825937] ----------------------------------------------------
+[19826628] Turn number: 21
+[19826628] Empty move from player 1
+[19826628] Empty move from player 2
+[19826628] ----------------------------------------------------
+[19827341] Turn number: 22
+[19827341] Empty move from player 1
+[19827341] Empty move from player 2
+[19827341] ----------------------------------------------------
+[19828052] Turn number: 23
+[19828052] Empty move from player 1
+[19828052] Empty move from player 2
+[19828056] ----------------------------------------------------
+[19828743] Turn number: 24
+[19828743] Empty move from player 1
+[19828744] Empty move from player 2
+[19828744] ----------------------------------------------------
+[19829422] Turn number: 25
+[19829422] Empty move from player 1
+[19829423] Empty move from player 2
+[19829423] ----------------------------------------------------
+[19830130] Turn number: 26
+[19830130] Empty move from player 1
+[19830130] Empty move from player 2
+[19830131] ----------------------------------------------------
+[19830844] Turn number: 27
+[19830844] Empty move from player 1
+[19830844] Empty move from player 2
+[19830844] ----------------------------------------------------
+[19831567] Turn number: 28
+[19831567] Empty move from player 1
+[19831567] Empty move from player 2
+[19831568] ----------------------------------------------------
+[19832264] Turn number: 29
+[19832264] Empty move from player 1
+[19832264] Empty move from player 2
+[19832264] ----------------------------------------------------
+[19832943] Turn number: 30
+[19832943] Empty move from player 1
+[19832943] Empty move from player 2
+[19832943] ----------------------------------------------------
+[19833656] Turn number: 31
+[19833656] Empty move from player 1
+[19833656] Empty move from player 2
+[19833657] ----------------------------------------------------
+[19834330] Turn number: 32
+[19834330] Empty move from player 1
+[19834330] Empty move from player 2
+[19834330] ----------------------------------------------------
+[19835025] Turn number: 33
+[19835025] Empty move from player 1
+[19835026] Empty move from player 2
+[19835026] ----------------------------------------------------
+[19835690] Turn number: 34
+[19835690] Empty move from player 1
+[19835690] Empty move from player 2
+[19835690] ----------------------------------------------------
+[19836377] Turn number: 35
+[19836378] Empty move from player 1
+[19836378] Empty move from player 2
+[19836378] ----------------------------------------------------
+[19837066] Turn number: 36
+[19837066] Empty move from player 1
+[19837066] Empty move from player 2
+[19837066] ----------------------------------------------------
+[19837667] Red Re-spawned at  (2, 2)
+[19837667] Purple-Perpentine Re-spawned at  (4, 25)
+[19837835] Turn number: 37
+[19837835] Empty move from player 0
+[19837835] Empty move from player 1
+[19837835] Empty move from player 2
+[19837835] Empty move from player 3
+[19837835] ----------------------------------------------------
+[19838436] Red Killed AI at  (2, 3)
+[19838437] Blue-Perpentine Died at  (1, 3)
+[19838485] Turn number: 38
+[19838485] Empty move from player 0
+[19838485] Empty move from player 2
+[19838485] Empty move from player 3
+[19838485] ----------------------------------------------------
+[19839174] Turn number: 39
+[19839174] Empty move from player 0
+[19839174] Empty move from player 2
+[19839174] Empty move from player 3
+[19839174] ----------------------------------------------------
+[19839852] Turn number: 40
+[19839852] Empty move from player 0
+[19839853] Empty move from player 2
+[19839853] Empty move from player 3
+[19839853] ----------------------------------------------------
+[19840539] Turn number: 41
+[19840539] Empty move from player 0
+[19840539] Empty move from player 2
+[19840540] Empty move from player 3
+[19840540] ----------------------------------------------------
+[19841226] Turn number: 42
+[19841227] Empty move from player 0
+[19841227] Empty move from player 2
+[19841227] Empty move from player 3
+[19841227] ----------------------------------------------------
+[19841901] Turn number: 43
+[19841901] Empty move from player 0
+[19841901] Empty move from player 2
+[19841901] Empty move from player 3
+[19841901] ----------------------------------------------------
+[19842605] Turn number: 44
+[19842606] Empty move from player 0
+[19842606] Empty move from player 2
+[19842606] Empty move from player 3
+[19842606] ----------------------------------------------------
+[19843284] Turn number: 45
+[19843284] Empty move from player 0
+[19843284] Empty move from player 2
+[19843284] Empty move from player 3
+[19843284] ----------------------------------------------------
+[19843996] Turn number: 46
+[19843996] Empty move from player 0
+[19843996] Empty move from player 2
+[19843996] Empty move from player 3
+[19843996] ----------------------------------------------------
+[19844650] Turn number: 47
+[19844653] Empty move from player 0
+[19844653] Empty move from player 2
+[19844653] Empty move from player 3
+[19844653] ----------------------------------------------------
+[19845342] Turn number: 48
+[19845343] Empty move from player 0
+[19845343] Empty move from player 2
+[19845343] Empty move from player 3
+[19845343] ----------------------------------------------------
+[19846040] Turn number: 49
+[19846040] Empty move from player 0
+[19846041] Empty move from player 2
+[19846041] Empty move from player 3
+[19846041] ----------------------------------------------------
+[19846760] Turn number: 50
+[19846761] Empty move from player 0
+[19846761] Empty move from player 2
+[19846761] Empty move from player 3
+[19846761] ----------------------------------------------------
+[19847410] Turn number: 51
+[19847410] Empty move from player 0
+[19847410] Empty move from player 2
+[19847410] Empty move from player 3
+[19847410] ----------------------------------------------------
+[19848102] Turn number: 52
+[19848103] Empty move from player 0
+[19848103] Empty move from player 2
+[19848103] Empty move from player 3
+[19848103] ----------------------------------------------------
+[19848791] Turn number: 53
+[19848791] Empty move from player 0
+[19848791] Empty move from player 2
+[19848791] Empty move from player 3
+[19848791] ----------------------------------------------------
+[19849472] Turn number: 54
+[19849472] Empty move from player 0
+[19849472] Empty move from player 2
+[19849473] Empty move from player 3
+[19849473] ----------------------------------------------------
+[19850176] Turn number: 55
+[19850176] Empty move from player 0
+[19850176] Empty move from player 2
+[19850176] Empty move from player 3
+[19850176] ----------------------------------------------------
+[19850818] Turn number: 56
+[19850818] Empty move from player 0
+[19850818] Empty move from player 2
+[19850818] Empty move from player 3
+[19850818] ----------------------------------------------------
+[19851517] Turn number: 57
+[19851517] Empty move from player 0
+[19851518] Empty move from player 2
+[19851518] Empty move from player 3
+[19851518] ----------------------------------------------------
+[19852303] Turn number: 58
+[19852303] Empty move from player 0
+[19852303] Empty move from player 2
+[19852303] Empty move from player 3
+[19852303] ----------------------------------------------------
+[19852973] Turn number: 59
+[19852973] Empty move from player 0
+[19852973] Empty move from player 2
+[19852973] Empty move from player 3
+[19852973] ----------------------------------------------------
+[19853673] Turn number: 60
+[19853673] Empty move from player 0
+[19853673] Empty move from player 2
+[19853674] Empty move from player 3
+[19853674] ----------------------------------------------------
+[19854356] Turn number: 61
+[19854356] Empty move from player 0
+[19854356] Empty move from player 2
+[19854356] Empty move from player 3
+[19854356] ----------------------------------------------------
+[19855047] Turn number: 62
+[19855048] Empty move from player 0
+[19855048] Empty move from player 2
+[19855048] Empty move from player 3
+[19855048] ----------------------------------------------------
+[19855649] Blue-Perpentine Re-spawned at  (26, 2)
+[19855740] Turn number: 63
+[19855741] Empty move from player 0
+[19855741] Empty move from player 1
+[19855741] Empty move from player 2
+[19855741] Empty move from player 3
+[19855741] ----------------------------------------------------
+[19856444] Turn number: 64
+[19856444] Empty move from player 0
+[19856444] Empty move from player 1
+[19856444] Empty move from player 2
+[19856444] Empty move from player 3
+[19856444] ----------------------------------------------------
+[19857130] Turn number: 65
+[19857130] Empty move from player 0
+[19857130] Empty move from player 1
+[19857130] Empty move from player 2
+[19857130] Empty move from player 3
+[19857130] ----------------------------------------------------
+[19857815] Turn number: 66
+[19857815] Empty move from player 0
+[19857815] Empty move from player 1
+[19857815] Empty move from player 2
+[19857815] Empty move from player 3
+[19857815] ----------------------------------------------------

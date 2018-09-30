@@ -1,8 +1,9 @@
 from PythonClientAPI.game.PointUtils import *
 from PythonClientAPI.game.Entities import FriendlyUnit, EnemyUnit, Tile
-from PythonClientAPI.game.Enums import Team
+from PythonClientAPI.game.Enums import Direction
 from PythonClientAPI.game.World import World
 from PythonClientAPI.game.TileUtils import TileUtils
+from PythonClientAPI.game.FloodFiller import FloodFiller
 
 class PlayerAI:
 
@@ -29,6 +30,38 @@ class PlayerAI:
         :param friendly_unit: FriendlyUnit object
         :param enemy_units: list of EnemyUnit objects
         '''
+
+        def get_score(point):
+            if world.is_within_bounds(point) == False:
+                return -1000
+
+            score = 0
+            next_tile = world.position_to_tile_map[(point)]
+            if next_tile.is_neutral and next_tile.head is None:
+                score += 2
+            elif next_tile.is_enemy:
+                score += 2
+            elif next_tile.head != None:
+                score -= 1000
+
+            flood_filler = FloodFiller(world)
+            score += flood_filler.flood_fill(friendly_unit.body, friendly_unit.territory, friendly_unit.position, point)
+            return score
+
+
+
+        def evaluation_function(world, friendly_unit, enemy_units):
+            up_point = add_points(friendly_unit.position, (1, 0))
+            right_point = add_points(friendly_unit.position, (0, 1))
+            down_point = add_points(friendly_unit.position, (-1, 0))
+            left_point = add_points(friendly_unit.position, (0, -1))
+
+            points = [up_point, right_point, down_point, left_point]
+            scores = [get_score(up_point), get_score(right_point), get_score(down_point), get_score(left_point)]
+            max_score = max(scores)
+            max_index = scores.index(max_score)
+            print('NEXT POINT', points[max_index])
+            return points[max_index]
 
         # increment turn count
         self.turn_count += 1
@@ -58,7 +91,9 @@ class PlayerAI:
             self.target = world.util.get_closest_friendly_territory_from(friendly_unit.position, None)
 
         # set next move as the next point in the path to target
-        next_move = world.path.get_shortest_path(friendly_unit.position, self.target.position, friendly_unit.snake)[0]
+
+        next_move = evaluation_function(world, friendly_unit, enemy_units)
+        # next_move = world.path.get_shortest_path(friendly_unit.position, self.target.position, friendly_unit.snake)[0]
 
         # move!
         friendly_unit.move(next_move)
